@@ -1,0 +1,82 @@
+@import 'tailwindcss';
+
+/* ─── DRIDA design tokens ─────────────────────────────────────────────
+   Palette: deep navy "operations room" base, cyan/blue resilience
+   accents, amber alert signal. Chosen for a calm-but-urgent civic feel. */
+@theme {
+  --color-ink-950: #060a14;
+  --color-ink-900: #0b1220;
+  --color-ink-850: #0f1729;
+  --color-ink-800: #131c31;
+  --color-ink-700: #1c2942;
+
+  --color-brand-300: #7dd3fc;
+  --color-brand-400: #38bdf8;
+  --color-brand-500: #22d3ee;
+  --color-brand-600: #2563eb;
+
+  --color-signal-400: #fbbf24;
+  --color-signal-500: #f59e0b;
+
+  --color-life-400: #34d399;
+  --color-life-500: #10b981;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-slate-200 antialiased;
+    font-family: var(--font-sans);
+    background-image:
+      radial-gradient(60rem 40rem at 15% -10%, rgba(37, 99, 235, 0.18), transparent 60%),
+      radial-gradient(50rem 40rem at 100% 0%, rgba(34, 211, 238, 0.12), transparent 55%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    background: rgba(34, 211, 238, 0.25);
+  }
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+  }
+  .glass-strong {
+    @apply border border-white/10 bg-ink-850/70 backdrop-blur-xl;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-300 via-brand-500 to-brand-600 bg-clip-text text-transparent;
+  }
+  .ring-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950;
+  }
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+}
+
+/* Slow ambient pulse for the live "operational" dot */
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+.pulse-dot {
+  animation: pulse-ring 2.4s cubic-bezier(0.66, 0, 0, 1) infinite;
+}
