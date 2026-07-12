@@ -350,7 +350,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_icons",
-      "community": 11,
+      "community": 7,
       "norm_label": "icons.js"
     },
     {
@@ -360,7 +360,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_icons_icons",
-      "community": 11,
+      "community": 7,
       "norm_label": "icons"
     },
     {
@@ -380,7 +380,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_components_icons_partnericon",
-      "community": 11,
+      "community": 7,
       "norm_label": "partnericon()"
     },
     {
@@ -390,7 +390,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ui",
-      "community": 7,
+      "community": 4,
       "norm_label": "ui.jsx"
     },
     {
@@ -410,7 +410,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_ui_section",
-      "community": 4,
+      "community": 10,
       "norm_label": "section()"
     },
     {
@@ -430,7 +430,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_components_ui_badge",
-      "community": 7,
+      "community": 4,
       "norm_label": "badge()"
     },
     {
@@ -440,7 +440,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_components_ui_btnstyles",
-      "community": 7,
+      "community": 4,
       "norm_label": "btnstyles"
     },
     {
@@ -450,7 +450,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_components_ui_button",
-      "community": 7,
+      "community": 4,
       "norm_label": "button()"
     },
     {
@@ -480,7 +480,7 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "src_components_ui_stagger",
-      "community": 7,
+      "community": 4,
       "norm_label": "stagger"
     },
     {
@@ -490,7 +490,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "src_components_ui_staggeritem",
-      "community": 7,
+      "community": 4,
       "norm_label": "staggeritem"
     },
     {
@@ -590,7 +590,7 @@
       "source_location": "L173",
       "_origin": "ast",
       "id": "src_data_site_readiness",
-      "community": 4,
+      "community": 10,
       "norm_label": "readiness"
     },
     {
@@ -860,7 +860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_pages_notfound",
-      "community": 7,
+      "community": 4,
       "norm_label": "notfound.jsx"
     },
     {
@@ -870,7 +870,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_pages_notfound_notfound",
-      "community": 7,
+      "community": 4,
       "norm_label": "notfound()"
     },
     {
@@ -880,7 +880,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_pages_partners",
-      "community": 11,
+      "community": 7,
       "norm_label": "partners.jsx"
     },
     {
@@ -890,7 +890,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_pages_partners_hubdiagram",
-      "community": 11,
+      "community": 7,
       "norm_label": "hubdiagram()"
     },
     {
@@ -900,7 +900,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "src_pages_partners_partners",
-      "community": 11,
+      "community": 7,
       "norm_label": "partners()"
     },
     {
@@ -910,7 +910,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_pages_preparedness",
-      "community": 4,
+      "community": 10,
       "norm_label": "preparedness.jsx"
     },
     {
@@ -920,7 +920,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_pages_preparedness_tier",
-      "community": 4,
+      "community": 10,
       "norm_label": "tier()"
     },
     {
@@ -930,7 +930,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_pages_preparedness_preparedness",
-      "community": 4,
+      "community": 10,
       "norm_label": "preparedness()"
     },
     {
@@ -3412,5 +3412,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0cd8003a81432bdc3639ee3a365ef532e1932dec"
+  "built_at_commit": "c8c3dbbffa955ceccf4e2331f7e6a2577a4fd417"
 }

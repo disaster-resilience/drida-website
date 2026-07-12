@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Check, RotateCcw, ShieldAlert, ShieldCheck, Shield } from 'lucide-react'
-import { Container, Section, Card, Button, Reveal } from '../components/ui.jsx'
+import { Container, Section, Card, Reveal, Button } from '../components/ui.jsx'
 import PageHeader from '../components/PageHeader.jsx'
 import { READINESS } from '../data/site.js'
 
@@ -100,17 +100,24 @@ export default function Preparedness() {
                   )
                 })}
               </ul>
-
-              <div className="mt-8 rounded-2xl border border-white/10 bg-ink-900/50 p-6">
-                <p className="text-sm text-slate-300">
-                  Want the full household toolkit and local alert sign-up?
-                </p>
-                <Button to="/contact" className="mt-4">
-                  Request the readiness kit
-                </Button>
-              </div>
             </Reveal>
           </div>
+        </Container>
+      </Section>
+
+      <Section className="pt-4">
+        <Container>
+          <Reveal>
+            <Card hover={false} className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 className="text-lg font-bold text-white">Have questions?</h2>
+                <p className="mt-1 text-sm text-slate-400">
+                  Ask us about preparedness in your area — we're happy to help.
+                </p>
+              </div>
+              <Button to="/contact" className="shrink-0">Ask us</Button>
+            </Card>
+          </Reveal>
         </Container>
       </Section>
     </>
