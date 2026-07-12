@@ -3,3 +3,6 @@ dist/
 *.local
 .DS_Store
 /tmp/
+# Source briefs / uploaded artifacts — keep out of the public repo (may contain
+# partner contact details); the site reads from src/data, not from these.
+uploads/

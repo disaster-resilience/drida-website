@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, MapPin } from 'lucide-react'
 import Logo from './Logo.jsx'
 import { NAV, ORG } from '../data/site.js'
 
@@ -32,12 +32,6 @@ export default function Footer() {
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500">Contact</h3>
           <ul className="mt-4 space-y-3 text-sm text-slate-300">
-            <li className="flex items-start gap-2.5">
-              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-signal-400" />
-              <span>
-                Emergency <span className="font-semibold tabular-nums text-white">{ORG.emergency}</span>
-              </span>
-            </li>
             <li className="flex items-start gap-2.5">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
               <a href={`mailto:${ORG.email}`} className="ring-focus rounded hover:text-brand-300">

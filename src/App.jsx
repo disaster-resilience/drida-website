@@ -5,6 +5,7 @@ import Footer from './components/Footer.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import Home from './pages/Home.jsx'
 import Programs from './pages/Programs.jsx'
+import Partners from './pages/Partners.jsx'
 import Impact from './pages/Impact.jsx'
 import Preparedness from './pages/Preparedness.jsx'
 import About from './pages/About.jsx'
@@ -43,6 +44,7 @@ export default function App() {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Page><Home /></Page>} />
             <Route path="/programs" element={<Page><Programs /></Page>} />
+            <Route path="/partners" element={<Page><Partners /></Page>} />
             <Route path="/impact" element={<Page><Impact /></Page>} />
             <Route path="/preparedness" element={<Page><Preparedness /></Page>} />
             <Route path="/about" element={<Page><About /></Page>} />

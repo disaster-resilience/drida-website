@@ -1,49 +1,34 @@
-import { motion } from 'framer-motion'
-import { TrendingUp, ShieldCheck, Quote } from 'lucide-react'
+import { Landmark, Waves, Activity, Wind, RadioTower, Building2, Map, Users, Target } from 'lucide-react'
 import { Container, Section, SectionHeading, Card, Reveal } from '../components/ui.jsx'
 import PageHeader from '../components/PageHeader.jsx'
-import StatGrid from '../components/StatGrid.jsx'
+import { INDIA_RISK, AIMS, GOALS } from '../data/site.js'
 
-// Property loss averted per year ($ millions) — illustrative program modeling.
-const TREND = [
-  { year: '2021', value: 180 },
-  { year: '2022', value: 320 },
-  { year: '2023', value: 560 },
-  { year: '2024', value: 740 },
-  { year: '2025', value: 900 },
-]
-const MAX = Math.max(...TREND.map((d) => d.value))
+// Local icon registry for this page's data-driven cards.
+const RISK_ICONS = { Landmark, Waves, Activity, Wind }
+const AIM_ICONS = { RadioTower, Building2, Map, Users }
 
-const OUTCOMES = [
-  { label: 'Flood-warning coverage', value: '96%', note: 'of residents in served basins' },
-  { label: 'Retrofitted lifeline facilities', value: '210', note: 'hospitals, shelters & utilities' },
-  { label: 'Response teams trained', value: '1,150', note: 'neighborhood volunteers' },
-]
-
-function TrendChart() {
+function RiskCard({ item }) {
+  const Icon = RISK_ICONS[item.icon] || Activity
   return (
-    <Card hover={false} className="lg:p-8">
-      <div className="flex items-center gap-2 text-brand-300">
-        <TrendingUp className="h-5 w-5" />
-        <h3 className="text-sm font-semibold uppercase tracking-wider">Property loss averted / year</h3>
+    <Card hover={false} className="text-center">
+      <Icon className="mx-auto h-7 w-7 text-brand-300" />
+      <div className="mt-4 text-3xl font-extrabold text-gradient sm:text-4xl">{item.value}</div>
+      <div className="mt-1 text-sm font-semibold text-white">{item.label}</div>
+      <div className="mt-2 text-xs leading-relaxed text-slate-500">{item.note}</div>
+    </Card>
+  )
+}
+
+function AimCard({ item }) {
+  const Icon = AIM_ICONS[item.icon] || Target
+  return (
+    <Card className="flex gap-4">
+      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-brand-500/10 text-brand-300">
+        <Icon className="h-5 w-5" />
       </div>
-      <div className="mt-8 flex h-56 items-end gap-3 sm:gap-6" role="img" aria-label="Bar chart: property loss averted rising from $180M in 2021 to $900M in 2025">
-        {TREND.map((d, i) => (
-          <div key={d.year} className="flex flex-1 flex-col items-center gap-3">
-            <div className="flex w-full flex-1 items-end">
-              <motion.div
-                className="w-full rounded-t-lg bg-gradient-to-t from-brand-600 to-brand-400"
-                initial={{ height: 0 }}
-                whileInView={{ height: `${(d.value / MAX) * 100}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.9, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <div className="-mt-6 text-center text-xs font-semibold text-slate-300">${d.value}M</div>
-              </motion.div>
-            </div>
-            <div className="text-xs font-medium text-slate-500">{d.year}</div>
-          </div>
-        ))}
+      <div>
+        <h3 className="text-base font-semibold text-white">{item.title}</h3>
+        <p className="mt-1 text-sm leading-relaxed text-slate-400">{item.body}</p>
       </div>
     </Card>
   )
@@ -54,52 +39,60 @@ export default function Impact() {
     <>
       <PageHeader
         eyebrow="Impact"
-        title="What resilience returns."
-        lead="Prevention is invisible when it works. These figures make the avoided losses — and the lives kept safe — visible and accountable."
+        title="What we aim to change."
+        lead="The India Regional Technology Hub is new — so this is a statement of intent, not a scoreboard. Here is the scale of what India faces each year, and exactly what we are building the Hub to reduce."
       />
 
       <Section className="pt-10">
         <Container>
-          <Reveal>
-            <StatGrid />
-          </Reveal>
+          <SectionHeading
+            eyebrow="The challenge"
+            title="What disasters cost India every year"
+            lead="These are the numbers we exist to bring down. India is one of the most disaster-exposed nations on earth."
+          />
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {INDIA_RISK.map((r, i) => (
+              <Reveal key={r.id} delay={i * 0.06}>
+                <RiskCard item={r} />
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
-            <Reveal>
-              <TrendChart />
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="grid h-full gap-4">
-                {OUTCOMES.map((o) => (
-                  <Card key={o.label} className="flex items-center justify-between gap-4">
-                    <div>
-                      <div className="text-sm font-semibold text-white">{o.label}</div>
-                      <div className="text-xs text-slate-500">{o.note}</div>
-                    </div>
-                    <div className="text-2xl font-extrabold text-gradient">{o.value}</div>
-                  </Card>
-                ))}
-              </div>
-            </Reveal>
+      <Section className="pt-4">
+        <Container>
+          <SectionHeading
+            eyebrow="Our aims"
+            title="We aim to save lives and reduce loss"
+            lead="Two north-star goals, and the concrete work the new Hub is standing up to reach them."
+          />
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            {GOALS.map((g, i) => (
+              <Reveal key={g.id} delay={i * 0.06}>
+                <Card hover={false} className="border-brand-400/20 bg-ink-900/50">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-brand-300">We aim to</div>
+                  <div className="mt-2 text-2xl font-extrabold text-white">{g.title}</div>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-400">{g.body}</p>
+                </Card>
+              </Reveal>
+            ))}
           </div>
 
-          <Reveal delay={0.1}>
-            <figure className="mt-10 rounded-2xl border border-brand-400/20 bg-ink-900/50 p-8 sm:p-10">
-              <Quote className="h-8 w-8 text-brand-400/60" />
-              <blockquote className="mt-4 text-xl font-medium leading-relaxed text-slate-100 sm:text-2xl">
-                “The new river sensors gave us forty minutes. That was the difference between a
-                flooded street and a flooded hospital. Everyone got out.”
-              </blockquote>
-              <figcaption className="mt-5 flex items-center gap-2 text-sm text-slate-400">
-                <ShieldCheck className="h-4 w-4 text-life-400" />
-                District emergency coordinator, Basin 7
-              </figcaption>
-            </figure>
-          </Reveal>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {AIMS.map((a, i) => (
+              <Reveal key={a.id} delay={i * 0.06}>
+                <AimCard item={a} />
+              </Reveal>
+            ))}
+          </div>
 
-          <p className="mt-8 text-center text-xs text-slate-500">
-            Figures are illustrative program-modeling estimates for demonstration and would be
-            replaced with audited outcome data in production.
+          <p className="mt-10 text-center text-xs text-slate-500">
+            Challenge figures are drawn from public sources (NDMA landmass-vulnerability
+            statistics; World Bank / UNDRR and 2000–2024 loss analyses) and are indicative;
+            confirm against the latest reports before wider use. Aims are targets for a newly
+            launched Hub, not outcomes achieved to date.
           </p>
         </Container>
       </Section>

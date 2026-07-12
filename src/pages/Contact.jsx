@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Send, CheckCircle2, AlertTriangle } from 'lucide-react'
+import { Mail, MapPin, Send, CheckCircle2, AlertTriangle } from 'lucide-react'
 import { Container, Section, Card, Button, Reveal } from '../components/ui.jsx'
 import PageHeader from '../components/PageHeader.jsx'
 import { ORG } from '../data/site.js'
@@ -9,9 +9,13 @@ const TOPICS = ['Partner with us', 'Fund a project', 'Request an assessment', 'M
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', topic: TOPICS[0], message: '' })
+  // `company` is a honeypot: hidden from humans, only bots fill it. StaticForms
+  // drops any submission where the honeypot field is non-empty.
+  const [form, setForm] = useState({ name: '', email: '', topic: TOPICS[0], message: '', company: '' })
   const [errors, setErrors] = useState({})
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState('')
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
 
@@ -24,11 +28,41 @@ export default function Contact() {
     return Object.keys(next).length === 0
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
-    // Front-end only demo: validate, then show a confirmation. A production
-    // build would POST this to an intake API / CRM.
-    if (validate()) setSent(true)
+    setSendError('')
+    if (!validate()) return
+    // Static site (no backend): POST to StaticForms.dev, which emails the team.
+    // The subject is auto-prefixed so every message is tagged as coming from the
+    // website. Recipient is fixed in the StaticForms dashboard (not sent here).
+    setSending(true)
+    try {
+      const res = await fetch(ORG.formEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          apiKey: ORG.formApiKey,
+          subject: `${ORG.formSubjectPrefix} ${form.topic}`,
+          name: form.name,
+          email: form.email,
+          replyTo: form.email,
+          topic: form.topic,
+          message: form.message,
+          honeypot: form.company,
+        }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok || data.success === false) {
+        throw new Error(data.message || `Request failed (${res.status})`)
+      }
+      setSent(true)
+    } catch (err) {
+      setSendError(
+        `Sorry — we couldn't send your message just now. Please email us directly at ${ORG.email}.`,
+      )
+    } finally {
+      setSending(false)
+    }
   }
 
   const field =
@@ -39,7 +73,7 @@ export default function Contact() {
       <PageHeader
         eyebrow="Contact"
         title="Let's build resilience together."
-        lead="Whether you represent a community at risk, a funder, or a volunteer — reach out. For a life-threatening emergency, always call your local emergency number first."
+        lead="Whether you represent a community at risk, a funder, or a volunteer — reach out. For a life-threatening emergency, always contact your local emergency services first."
       />
 
       <Section className="pt-10">
@@ -48,17 +82,6 @@ export default function Contact() {
             {/* Contact rail */}
             <Reveal>
               <div className="space-y-4">
-                <Card hover={false} className="border-signal-400/30 bg-signal-500/[0.06]">
-                  <div className="flex items-center gap-2 text-signal-400">
-                    <Phone className="h-5 w-5" />
-                    <span className="text-sm font-semibold uppercase tracking-wider">Emergency</span>
-                  </div>
-                  <a href={`tel:${ORG.emergency}`} className="ring-focus mt-2 block rounded text-4xl font-extrabold tabular-nums text-white">
-                    {ORG.emergency}
-                  </a>
-                  <p className="mt-1 text-xs text-slate-400">Life-threatening situations — call now.</p>
-                </Card>
-
                 <Card hover={false}>
                   <ul className="space-y-4 text-sm">
                     <li className="flex items-start gap-3">
@@ -88,17 +111,18 @@ export default function Contact() {
                 {sent ? (
                   <div className="flex flex-col items-center py-10 text-center">
                     <CheckCircle2 className="h-14 w-14 text-life-400" />
-                    <h2 className="mt-4 text-2xl font-bold text-white">Message received</h2>
+                    <h2 className="mt-4 text-2xl font-bold text-white">Message sent</h2>
                     <p className="mt-2 max-w-sm text-sm text-slate-400">
-                      Thanks, {form.name.split(' ')[0] || 'friend'}. Our team will respond within two
-                      business days. For anything urgent, call {ORG.emergency}.
+                      Thanks, {form.name.split(' ')[0] || 'friend'}. We've received your message and
+                      our team will respond within two business days. For a life-threatening
+                      emergency, please contact your local emergency services.
                     </p>
                     <Button
                       variant="ghost"
                       className="mt-6"
                       onClick={() => {
                         setSent(false)
-                        setForm({ name: '', email: '', topic: TOPICS[0], message: '' })
+                        setForm({ name: '', email: '', topic: TOPICS[0], message: '', company: '' })
                       }}
                     >
                       Send another message
@@ -106,6 +130,17 @@ export default function Contact() {
                   </div>
                 ) : (
                   <form onSubmit={onSubmit} noValidate className="space-y-5">
+                    {/* Honeypot: off-screen, not for humans. Bots that fill it get dropped. */}
+                    <input
+                      type="text"
+                      name="company"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      value={form.company}
+                      onChange={set('company')}
+                      className="absolute -left-[9999px] h-0 w-0 opacity-0"
+                    />
                     <div className="grid gap-5 sm:grid-cols-2">
                       <div>
                         <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-slate-300">
@@ -144,11 +179,18 @@ export default function Contact() {
                       {errors.message && <FieldError msg={errors.message} />}
                     </div>
 
-                    <Button type="submit" className="w-full sm:w-auto">
-                      Send message <Send className="h-4 w-4" />
+                    {sendError && (
+                      <div className="flex items-start gap-2 rounded-xl border border-red-500/30 bg-red-500/[0.06] px-4 py-3 text-sm text-red-300">
+                        <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+                        <span>{sendError}</span>
+                      </div>
+                    )}
+
+                    <Button type="submit" className="w-full sm:w-auto" disabled={sending}>
+                      {sending ? 'Sending…' : 'Send message'} <Send className="h-4 w-4" />
                     </Button>
                     <p className="text-xs text-slate-500">
-                      Demo form — submissions are validated in the browser and not sent anywhere.
+                      Your message goes straight to our team — we'll reply by email within two business days.
                     </p>
                   </form>
                 )}
