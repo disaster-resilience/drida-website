@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "src/components/Footer.jsx": {
-    "mtime": 1783823559.756846,
-    "ast_hash": "028ad5fc022d993b6790082fb2f9e8e8",
+    "mtime": 1783704173.710983,
+    "ast_hash": "11bda16efed8016beb40b0f6c6a7ec9e",
     "semantic_hash": ""
   },
   "src/components/Logo.jsx": {
@@ -30,8 +30,8 @@
     "semantic_hash": ""
   },
   "src/components/Navbar.jsx": {
-    "mtime": 1783823566.2970877,
-    "ast_hash": "16b4ab74a70e1087b8cad3a9e646f8bc",
+    "mtime": 1783704161.8101335,
+    "ast_hash": "de8a64f2671d688fba8bbe3253c519a0",
     "semantic_hash": ""
   },
   "src/components/PageHeader.jsx": {
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "src/data/site.js": {
-    "mtime": 1783823554.1705806,
-    "ast_hash": "5b19779af267379fe175fa70bb98ce3e",
+    "mtime": 1783822742.8210917,
+    "ast_hash": "6c51048a3317c5eeadccbe3fda4f9f64",
     "semantic_hash": ""
   },
   "src/main.jsx": {
@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "src/pages/Contact.jsx": {
-    "mtime": 1783823582.3407462,
-    "ast_hash": "7257589af5c2dfc18ed5a1c3486891a8",
+    "mtime": 1783822781.3691974,
+    "ast_hash": "3f3505a7a8443ee5855eda08ebd3aa02",
     "semantic_hash": ""
   },
   "src/pages/Home.jsx": {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Logo from './Logo.jsx'
 import { Button } from './ui.jsx'
 import { NAV, ORG } from '../data/site.js'
@@ -44,13 +44,6 @@ export default function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a
-            href={`tel:${ORG.emergency}`}
-            className="ring-focus flex items-center gap-1.5 rounded-full px-2 py-1 text-sm text-slate-300 hover:text-white"
-          >
-            <Phone className="h-4 w-4 text-signal-400" />
-            <span className="tabular-nums">{ORG.emergency}</span>
-          </a>
           <Button to="/contact" className="px-4 py-2">Get involved</Button>
         </div>
 
