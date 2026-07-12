@@ -10,6 +10,16 @@ import {
   GraduationCap,
   Globe2,
   Network,
+  Search,
+  ClipboardCheck,
+  Siren,
+  Package,
+  TrendingUp,
+  RefreshCw,
+  Target,
+  Handshake,
+  Leaf,
+  Recycle,
 } from 'lucide-react'
 
 export const ICONS = {
@@ -22,6 +32,16 @@ export const ICONS = {
   GraduationCap,
   Globe2,
   Network,
+  Search,
+  ClipboardCheck,
+  Siren,
+  Package,
+  TrendingUp,
+  RefreshCw,
+  Target,
+  Handshake,
+  Leaf,
+  Recycle,
 }
 
 export function programIcon(name) {

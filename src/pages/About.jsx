@@ -1,7 +1,8 @@
-import { Target, Compass, Handshake, ShieldCheck } from 'lucide-react'
+import { Target, Compass, Handshake, ShieldCheck, RotateCw } from 'lucide-react'
 import { Container, Section, SectionHeading, Card, Reveal } from '../components/ui.jsx'
 import PageHeader from '../components/PageHeader.jsx'
-import { ORG, APPROACH, GOALS } from '../data/site.js'
+import { programIcon } from '../components/icons.js'
+import { ORG, APPROACH, GOALS, CYCLE, PRINCIPLES } from '../data/site.js'
 
 const VALUES = [
   { icon: Target, title: 'Prevention over reaction', body: 'A dollar spent before a disaster is worth many spent after. We invest where it stops loss.' },
@@ -54,6 +55,81 @@ export default function About() {
               </Reveal>
             ))}
           </div>
+        </Container>
+      </Section>
+
+      <Section className="border-t border-white/5 bg-ink-900/40">
+        <Container>
+          <Reveal>
+            <SectionHeading
+              center
+              eyebrow="The field's framework"
+              title="The Disaster Management Cycle"
+              lead="A continuous process for building safer, more resilient and better-prepared communities. DRIDA works across every phase of the cycle."
+            />
+          </Reveal>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {CYCLE.map((s, i) => {
+              const Icon = programIcon(s.icon)
+              return (
+                <Reveal key={s.id} delay={i * 0.05}>
+                  <Card hover={false} className={`h-full border-t-2 ${s.color.border}`}>
+                    <div className="flex items-center gap-3">
+                      <span
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold ${s.color.badge}`}
+                      >
+                        {i + 1}
+                      </span>
+                      <span
+                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${s.color.iconBg} ${s.color.icon}`}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <h3 className="text-sm font-bold leading-tight text-white">{s.title}</h3>
+                    </div>
+                    <ul className="mt-4 space-y-2">
+                      {s.points.map((pt) => (
+                        <li key={pt} className="flex gap-2.5 text-sm leading-relaxed text-slate-400">
+                          <span className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${s.color.dot}`} />
+                          {pt}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </Reveal>
+              )
+            })}
+          </div>
+
+          <Reveal delay={0.1}>
+            <p className="mt-8 flex items-center justify-center gap-2 text-center text-sm text-slate-400">
+              <RotateCw className="h-4 w-4 text-brand-400" />
+              A continuous loop — every event sharpens the next cycle of response.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <div className="mt-10 rounded-2xl border border-white/10 bg-ink-900/50 p-6 sm:p-8">
+              <h3 className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
+                Key principles
+              </h3>
+              <div className="mt-6 grid gap-6 sm:grid-cols-3 lg:grid-cols-5">
+                {PRINCIPLES.map((p) => {
+                  const Icon = programIcon(p.icon)
+                  return (
+                    <div key={p.id} className="text-center">
+                      <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/10 text-brand-300 ring-1 ring-brand-400/20">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h4 className="mt-3 text-sm font-bold text-white">{p.title}</h4>
+                      <p className="mt-1 text-xs leading-relaxed text-slate-400">{p.body}</p>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </Reveal>
         </Container>
       </Section>
 

@@ -181,6 +181,108 @@ export const READINESS = [
   { id: 'insurance', label: 'Property insured for local hazards (flood/quake)' },
 ]
 
+// The Disaster Management Cycle — the discipline's foundational framework: a
+// continuous seven-phase loop for building safer communities. DRIDA works across
+// every phase (our four-step method, APPROACH, is our compressed take on it).
+// `color` holds full Tailwind class strings per phase so the theme stays in the
+// dark navy/cyan palette instead of the usual bright-pastel infographic look.
+// (Full literal strings here so Tailwind's scanner keeps them in the build.)
+export const CYCLE = [
+  {
+    id: 'risk-assessment',
+    icon: 'Search',
+    title: 'Risk Assessment & Identification',
+    points: [
+      'Identify hazards, vulnerabilities and capacities',
+      'Analyze and evaluate risks',
+      'Map and prioritize risks',
+      'Engage stakeholders and communities',
+    ],
+    color: { badge: 'bg-amber-400/15 text-amber-300', iconBg: 'bg-amber-400/10', icon: 'text-amber-300', border: 'border-amber-400/40', dot: 'bg-amber-400' },
+  },
+  {
+    id: 'preparedness',
+    icon: 'ClipboardCheck',
+    title: 'Preparedness & Planning',
+    points: [
+      'Develop disaster management plans',
+      'Establish early-warning systems',
+      'Build capacity and conduct trainings',
+      'Conduct drills and simulation exercises',
+    ],
+    color: { badge: 'bg-emerald-400/15 text-emerald-300', iconBg: 'bg-emerald-400/10', icon: 'text-emerald-300', border: 'border-emerald-400/40', dot: 'bg-emerald-400' },
+  },
+  {
+    id: 'prevention',
+    icon: 'Shield',
+    title: 'Prevention & Mitigation',
+    points: [
+      'Implement risk-reduction measures',
+      'Enforce building codes and land-use planning',
+      'Protect environment and critical infrastructure',
+      'Promote resilient livelihoods',
+    ],
+    color: { badge: 'bg-teal-400/15 text-teal-300', iconBg: 'bg-teal-400/10', icon: 'text-teal-300', border: 'border-teal-400/40', dot: 'bg-teal-400' },
+  },
+  {
+    id: 'response',
+    icon: 'Siren',
+    title: 'Response',
+    points: [
+      'Activate emergency response plans',
+      'Conduct search and rescue operations',
+      'Provide immediate relief and medical assistance',
+      'Ensure safety and security',
+    ],
+    color: { badge: 'bg-sky-400/15 text-sky-300', iconBg: 'bg-sky-400/10', icon: 'text-sky-300', border: 'border-sky-400/40', dot: 'bg-sky-400' },
+  },
+  {
+    id: 'relief',
+    icon: 'Package',
+    title: 'Relief',
+    points: [
+      'Provide food, water, shelter and essential supplies',
+      'Support vulnerable groups',
+      'Manage relief resources effectively',
+      'Coordinate with partners and stakeholders',
+    ],
+    color: { badge: 'bg-violet-400/15 text-violet-300', iconBg: 'bg-violet-400/10', icon: 'text-violet-300', border: 'border-violet-400/40', dot: 'bg-violet-400' },
+  },
+  {
+    id: 'recovery',
+    icon: 'TrendingUp',
+    title: 'Recovery',
+    points: [
+      'Restore basic services and infrastructure',
+      'Support livelihoods and economic recovery',
+      'Provide psychosocial support',
+      'Build back better with resilience',
+    ],
+    color: { badge: 'bg-rose-400/15 text-rose-300', iconBg: 'bg-rose-400/10', icon: 'text-rose-300', border: 'border-rose-400/40', dot: 'bg-rose-400' },
+  },
+  {
+    id: 'review',
+    icon: 'RefreshCw',
+    title: 'Review, Learning & Improvement',
+    points: [
+      'Evaluate response and recovery efforts',
+      'Document lessons learned',
+      'Update plans and strategies',
+      'Strengthen systems for continuous improvement',
+    ],
+    color: { badge: 'bg-orange-400/15 text-orange-300', iconBg: 'bg-orange-400/10', icon: 'text-orange-300', border: 'border-orange-400/40', dot: 'bg-orange-400' },
+  },
+]
+
+// The five principles that run through every phase of the cycle.
+export const PRINCIPLES = [
+  { id: 'participation', icon: 'Users', title: 'Participation', body: 'Engage all stakeholders and communities.' },
+  { id: 'risk-informed', icon: 'Target', title: 'Risk-Informed', body: 'Base decisions on risk data and analysis.' },
+  { id: 'coordination', icon: 'Handshake', title: 'Coordination', body: 'Work together across all levels and sectors.' },
+  { id: 'inclusiveness', icon: 'Leaf', title: 'Inclusiveness', body: 'Ensure no one is left behind.' },
+  { id: 'sustainability', icon: 'Recycle', title: 'Sustainability', body: 'Promote long-term resilience and sustainable solutions.' },
+]
+
 export const NAV = [
   { to: '/', label: 'Home' },
   { to: '/programs', label: 'Programs' },
