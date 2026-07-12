@@ -1,7 +1,7 @@
 # Graph Report - workspace  (2026-07-11)
 
 ## Corpus Check
-- 23 files · ~7,301 words
+- 23 files · ~7,317 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0cd8003a`
+- Built from commit: `c8c3dbbf`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -19,12 +19,12 @@
 - [[_COMMUNITY_ui.jsx|ui.jsx]]
 - [[_COMMUNITY_package.json|package.json]]
 - [[_COMMUNITY_site.js|site.js]]
-- [[_COMMUNITY_Impact.jsx|Impact.jsx]]
+- [[_COMMUNITY_ui.jsx|ui.jsx]]
 - [[_COMMUNITY_Home.jsx|Home.jsx]]
 - [[_COMMUNITY_DRIDA — Disaster Resilience Infrastructure Development Agency|DRIDA — Disaster Resilience Infrastructure Development Agency]]
-- [[_COMMUNITY_App.jsx|App.jsx]]
 - [[_COMMUNITY_Partners.jsx|Partners.jsx]]
 - [[_COMMUNITY_Partners.jsx|Partners.jsx]]
+- [[_COMMUNITY_Preparedness.jsx|Preparedness.jsx]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Container()` - 10 edges
@@ -63,9 +63,9 @@ Nodes (20): dependencies, framer-motion, lucide-react, react, react-dom, react-r
 Cohesion: 0.20
 Nodes (9): App(), Footer(), Logo(), Navbar(), ScrollToTop(), NAV, ORG, Contact() (+1 more)
 
-### Community 4 - "Impact.jsx"
-Cohesion: 0.50
-Nodes (4): Section(), READINESS, Preparedness(), tier()
+### Community 4 - "ui.jsx"
+Cohesion: 0.29
+Nodes (6): Badge(), btnStyles, Button(), stagger, staggerItem, NotFound()
 
 ### Community 5 - "Home.jsx"
 Cohesion: 0.18
@@ -75,17 +75,17 @@ Nodes (5): programIcon(), goalIcons, ProgramsPreview(), riskIcons, Programs()
 Cohesion: 0.22
 Nodes (8): Accessibility & polish, Build & preview, Develop, DRIDA — Disaster Resilience Infrastructure Development Agency, Pages / routes, Stack, Verification status, Where to edit
 
-### Community 7 - "App.jsx"
-Cohesion: 0.29
-Nodes (6): Badge(), btnStyles, Button(), stagger, staggerItem, NotFound()
+### Community 7 - "Partners.jsx"
+Cohesion: 0.47
+Nodes (3): ICONS, partnerIcon(), Partners()
 
 ### Community 9 - "Partners.jsx"
 Cohesion: 0.15
 Nodes (13): SectionHeading(), AIMS, APPROACH, GOALS, HUB, INDIA_RISK, PARTNERS, PROGRAMS (+5 more)
 
-### Community 11 - "Partners.jsx"
-Cohesion: 0.47
-Nodes (3): ICONS, partnerIcon(), Partners()
+### Community 10 - "Preparedness.jsx"
+Cohesion: 0.50
+Nodes (4): Section(), READINESS, Preparedness(), tier()
 
 ## Knowledge Gaps
 - **33 isolated node(s):** `name`, `private`, `version`, `type`, `description` (+28 more)

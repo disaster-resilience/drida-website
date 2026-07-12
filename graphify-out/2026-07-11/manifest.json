@@ -1,6 +1,6 @@
 {
   ".claude/settings.json": {
-    "mtime": 1783823494.801375,
+    "mtime": 1783825721.2090862,
     "ast_hash": "e51077b6a7f1f67afc748f1a32a1557d",
     "semantic_hash": ""
   },
@@ -15,13 +15,13 @@
     "semantic_hash": ""
   },
   "src/App.jsx": {
-    "mtime": 1783801469.0240002,
+    "mtime": 1783824316.3688326,
     "ast_hash": "30fb8d011db2c52ca3adaca5817d6045",
     "semantic_hash": ""
   },
   "src/components/Footer.jsx": {
-    "mtime": 1783704173.710983,
-    "ast_hash": "11bda16efed8016beb40b0f6c6a7ec9e",
+    "mtime": 1783824316.3690543,
+    "ast_hash": "028ad5fc022d993b6790082fb2f9e8e8",
     "semantic_hash": ""
   },
   "src/components/Logo.jsx": {
@@ -30,8 +30,8 @@
     "semantic_hash": ""
   },
   "src/components/Navbar.jsx": {
-    "mtime": 1783704161.8101335,
-    "ast_hash": "de8a64f2671d688fba8bbe3253c519a0",
+    "mtime": 1783824316.3692958,
+    "ast_hash": "16b4ab74a70e1087b8cad3a9e646f8bc",
     "semantic_hash": ""
   },
   "src/components/PageHeader.jsx": {
@@ -45,7 +45,7 @@
     "semantic_hash": ""
   },
   "src/components/icons.js": {
-    "mtime": 1783801441.851252,
+    "mtime": 1783824316.3695252,
     "ast_hash": "3cf5dd449defdcd8ea4ea8d51be25d47",
     "semantic_hash": ""
   },
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "src/data/site.js": {
-    "mtime": 1783822742.8210917,
-    "ast_hash": "6c51048a3317c5eeadccbe3fda4f9f64",
+    "mtime": 1783824316.3698902,
+    "ast_hash": "5b19779af267379fe175fa70bb98ce3e",
     "semantic_hash": ""
   },
   "src/main.jsx": {
@@ -70,17 +70,17 @@
     "semantic_hash": ""
   },
   "src/pages/Contact.jsx": {
-    "mtime": 1783822781.3691974,
-    "ast_hash": "3f3505a7a8443ee5855eda08ebd3aa02",
+    "mtime": 1783824316.370151,
+    "ast_hash": "7257589af5c2dfc18ed5a1c3486891a8",
     "semantic_hash": ""
   },
   "src/pages/Home.jsx": {
-    "mtime": 1783804666.6622941,
+    "mtime": 1783824316.3705122,
     "ast_hash": "4f9712bd72e6a9334b73d607251cd8e0",
     "semantic_hash": ""
   },
   "src/pages/Impact.jsx": {
-    "mtime": 1783804289.1019998,
+    "mtime": 1783824316.3707783,
     "ast_hash": "07b7e6812a35fd86df836278157bc4aa",
     "semantic_hash": ""
   },
@@ -90,8 +90,8 @@
     "semantic_hash": ""
   },
   "src/pages/Preparedness.jsx": {
-    "mtime": 1783704310.3609328,
-    "ast_hash": "33332b40d45f3d28e621a4573803fe24",
+    "mtime": 1783825672.092066,
+    "ast_hash": "8e30c15ab06b65b984aa0c37cf1b9c8b",
     "semantic_hash": ""
   },
   "src/pages/Programs.jsx": {
@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   ".github/workflows/deploy.yml": {
-    "mtime": 1783720845.9876099,
-    "ast_hash": "91339961e7c64994286fbd1667fa7cc0",
+    "mtime": 1783825094.5942817,
+    "ast_hash": "e9b9af6c0a989aceb9145da65fc619db",
     "semantic_hash": ""
   },
   "uploads/8604e81b_Partners_Role.pdf": {
@@ -130,7 +130,7 @@
     "semantic_hash": ""
   },
   "src/pages/Partners.jsx": {
-    "mtime": 1783801461.4729664,
+    "mtime": 1783824316.3710055,
     "ast_hash": "5f71a310735595a8e07f767d3dc8045f",
     "semantic_hash": ""
   }
