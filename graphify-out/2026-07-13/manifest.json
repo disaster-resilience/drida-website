@@ -1,6 +1,6 @@
 {
   ".claude/settings.json": {
-    "mtime": 1783953947.7806513,
+    "mtime": 1783953165.6163116,
     "ast_hash": "e51077b6a7f1f67afc748f1a32a1557d",
     "semantic_hash": ""
   },
@@ -45,8 +45,8 @@
     "semantic_hash": ""
   },
   "src/components/icons.js": {
-    "mtime": 1783953548.4366384,
-    "ast_hash": "8da9e76b25e7cbdbc042fa276836007c",
+    "mtime": 1783827036.1728861,
+    "ast_hash": "3cf5dd449defdcd8ea4ea8d51be25d47",
     "semantic_hash": ""
   },
   "src/components/ui.jsx": {
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "src/data/site.js": {
-    "mtime": 1783953540.7740414,
-    "ast_hash": "25e5c75cbbfefcb3b4e67a39ff72084e",
+    "mtime": 1783827036.1732955,
+    "ast_hash": "5b19779af267379fe175fa70bb98ce3e",
     "semantic_hash": ""
   },
   "src/main.jsx": {
@@ -65,8 +65,8 @@
     "semantic_hash": ""
   },
   "src/pages/About.jsx": {
-    "mtime": 1783953573.9001474,
-    "ast_hash": "da57ce61c7c37bbbaf347223856e9acb",
+    "mtime": 1783704330.9671638,
+    "ast_hash": "897ce76447f8e8875d2af21658971fde",
     "semantic_hash": ""
   },
   "src/pages/Contact.jsx": {
