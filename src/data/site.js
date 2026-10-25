@@ -47,13 +47,6 @@ export const PARTNERS = [
     body: 'Engineering research, talent, and testing — turning disaster science into deployable resilient design.',
   },
   {
-    id: 'iadm',
-    name: 'International Association of Disaster Management',
-    role: 'International Knowledge Partner',
-    icon: 'Globe2',
-    body: 'Global standards, best practices, and cross-border knowledge exchange in disaster management.',
-  },
-  {
     id: 'tnsdma',
     name: 'Tamil Nadu State Disaster Management Authority',
     role: 'State Authority',
