@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, ShieldCheck, HeartPulse, Home as HomeIcon, Landmark, Waves, Activity, Wind } from 'lucide-react'
+import { ArrowRight, ShieldCheck, HeartPulse, Home as HomeIcon, ChevronRight, Landmark, Waves, Activity, Wind } from 'lucide-react'
 import { Container, Section, SectionHeading, Button, Card, Badge, Reveal, stagger, staggerItem } from '../components/ui.jsx'
 import { programIcon } from '../components/icons.js'
 import { ORG, GOALS, PROGRAMS, APPROACH, INDIA_RISK } from '../data/site.js'
