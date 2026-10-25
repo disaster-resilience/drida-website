@@ -7,6 +7,8 @@ import Home from './pages/Home.jsx'
 import Programs from './pages/Programs.jsx'
 import Impact from './pages/Impact.jsx'
 import Preparedness from './pages/Preparedness.jsx'
+import Blog from './pages/Blog.jsx'
+import BlogPost from './pages/BlogPost.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import NotFound from './pages/NotFound.jsx'
@@ -45,6 +47,8 @@ export default function App() {
             <Route path="/programs" element={<Page><Programs /></Page>} />
             <Route path="/impact" element={<Page><Impact /></Page>} />
             <Route path="/preparedness" element={<Page><Preparedness /></Page>} />
+            <Route path="/blog" element={<Page><Blog /></Page>} />
+            <Route path="/blog/:slug" element={<Page><BlogPost /></Page>} />
             <Route path="/about" element={<Page><About /></Page>} />
             <Route path="/contact" element={<Page><Contact /></Page>} />
             <Route path="*" element={<Page><NotFound /></Page>} />

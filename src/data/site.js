@@ -283,11 +283,100 @@ export const PRINCIPLES = [
   { id: 'sustainability', icon: 'Recycle', title: 'Sustainability', body: 'Promote long-term resilience and sustainable solutions.' },
 ]
 
+
+// =====================================================================
+// BLOG POSTS & FIELD DISPATCHES
+// =====================================================================
+export const BLOG_POSTS = [
+  {
+    slug: 'nepal-silent-time-bombs-himalayas-melting-lakes',
+    title: 'Nepal’s Silent Time Bombs: Why the Himalaya’s Melting Lakes Demand Urgent Action',
+    subtitle:
+      'The glacier collapse leading to the Bhote Koshi incident on August 26 is not an isolated tragedy. It is a warning that Nepal sits atop a slow-motion emergency of nearly 200 unstable high-altitude lakes.',
+    author: {
+      name: 'Dr. Antony Gnanamuthu',
+      role: 'Humanitarian professional & disaster management specialist',
+      affiliation: 'Secretary General, International Association of Disaster Management (IADM)',
+      avatar: 'AG',
+    },
+    publishedAt: '2026-08-31',
+    readTime: '6 min read',
+    category: 'Field Dispatches',
+    tags: ['Glacial Hazards', 'Himalayas', 'Early Warning Systems', 'Cross-Border Resilience', 'Climate Impact'],
+    featured: true,
+    coverBadge: 'Special Report · High-Altitude Hazards',
+    keyMetrics: [
+      { value: '900+', label: 'Casualties', note: 'Confirmed toll crossing 900 downstream in Rasuwa & Chitwan' },
+      { value: '~200', label: 'Dangerous Lakes', note: 'Unstable glacial lakes across Hindu Kush Himalaya' },
+      { value: '47', label: 'Priority Lakes', note: '21 inside Nepal, 25 across the border in Tibet feeding Nepali rivers' },
+      { value: '65%', label: 'Accelerated Ice Loss', note: 'Faster Himalayan ice loss rate in 2010s vs 2000s' },
+    ],
+    summary:
+      'Between 100 and 200 million cubic metres of ice and rock tore free in the Lhende Khola valley at 5,400m, triggering catastrophic flooding down the Bhote Koshi corridor. Dr. Antony Gnanamuthu details why engineering solutions, transboundary cooperation with China, and sensor networks are urgently required.',
+    sections: [
+      {
+        heading: 'The Disaster at Bhote Koshi',
+        content: [
+          'The images from Rasuwa and downstream valleys this past week are searing: bridges twisted into scrap, homes buried under mud and boulders, search teams picking through debris fields that stretch toward Chitwan. By the morning of 31 August 2026 the official death toll from the Bhote Koshi disaster had already crossed 900 and was still rising.',
+          'Preliminary assessments point to a massive glacier collapse high in the Lhende Khola valley, a tributary flowing from Tibet into Nepal. Between 100 and 200 million cubic metres of ice and rock tore free at roughly 5,200–5,400 metres and slammed into the valley floor with the force of a small earthquake. A secondary debris-dammed lake then formed and overflowed days later, compounding the destruction.',
+          'This was not a classic glacial lake outburst flood (GLOF). Yet it belongs to the same family of hazards that scientists at the International Centre for Integrated Mountain Development (ICIMOD) and Nepal’s own hydrologists have been warning about for years. Around 200 glacial lakes across the Hindu Kush Himalaya are now classified as dangerous. Of the 47 Potentially Dangerous Glacial Lakes prioritised for Nepal’s river basins, 21 lie inside the country and 25 sit across the border in Tibet, feeding rivers that flow directly into Nepali territory. The August disaster is therefore both a national tragedy and a regional alarm bell.',
+        ],
+      },
+      {
+        heading: 'The Geography of Vulnerability',
+        content: [
+          'Nepal’s physical setting is uniquely unforgiving. The country occupies some of the youngest, steepest and most tectonically active mountains on Earth. Rivers such as the Bhote Koshi, Trishuli, Dudh Koshi and Arun drop thousands of metres in short horizontal distances. A surge that begins at 5,000 metres can reach inhabited valleys in minutes or a few hours, leaving almost no time for warning.',
+          'The summer monsoon overlaps directly with heavily glaciated terrain — a combination rare in the Alps or Andes — so intense rainfall can coincide with, or trigger, glacial instability. The 2015 Gorkha earthquake further fractured slopes and loosened rock faces whose effects still linger a decade later.',
+          'Population and infrastructure are concentrated precisely where the hazard is greatest. Villages, trekking routes, hydropower plants and the main overland trade corridor to China occupy the same narrow river valleys that channel these floods. When a high-altitude mass of ice, rock or water is released, there is nowhere for people or assets to hide.',
+        ],
+      },
+      {
+        heading: 'How Warming Turns Ice into Hazard',
+        content: [
+          'The root driver is straightforward and accelerating. Glaciers across the Hindu Kush Himalaya lost ice roughly 65 per cent faster in the 2010s than in the previous decade. Nepal’s own glaciers shed close to a quarter of their surface area between 1977 and 2010; the pace has almost certainly increased since. Meltwater that once drained or refroze now pools behind loose moraine dams of rock and ice debris. Small ponds grow into lakes of a square kilometre or more.',
+          'Famous examples such as Imja Tsho near Everest and Thulagi near Manaslu were negligible in the mid-twentieth century; both are now among the most closely watched water bodies in the country.',
+          'Warmer temperatures do double duty. They feed the lakes with more water and they destabilise the slopes, permafrost and hanging glaciers above them. Avalanches, rockfalls and ice collapses become more likely triggers. Recent events show that the danger is no longer confined to the large, well-known lakes. The 2024 Thame flood and the July 2025 Rasuwagadhi event both originated from relatively small or newly formed lakes that had not dominated official watchlists. Scientists now emphasise that “tiny and short-lived” supraglacial lakes can prove unexpectedly lethal.',
+        ],
+      },
+      {
+        heading: 'A Track Record Already Written in Debris',
+        content: [
+          'Nepal’s modern history with these hazards is long enough to remove any excuse for surprise. The 1985 Dig Tsho outburst destroyed a nearly completed hydropower project. The 1998 Tam Pokhari event caused widespread downstream damage. In 2016 a lake in Tibet breached and sent floodwater down the same Bhote Koshi corridor, wrecking stretches of the Arniko Highway and a hydropower plant at a cost estimated at US$70 million.',
+          'Smaller outbursts and debris flows have continued, often with limited media attention until the body count or infrastructure losses force recognition. Each event has followed the same pattern: rapid onset, limited or no warning, disproportionate damage to communities and critical infrastructure, and a temporary surge of concern that fades until the next disaster. The August 2026 catastrophe is simply the largest and deadliest chapter so far.',
+        ],
+      },
+      {
+        heading: 'Transboundary Risk Cannot Be Managed Alone',
+        content: [
+          'More than half of the priority dangerous lakes sit inside Tibet. Nepal inherits hazards from terrain it cannot access, monitor or manage on its own. Floods originating across the border have already struck Nepali valleys repeatedly. Effective early-warning systems, real-time data sharing and joint mitigation therefore require genuine cooperation with China. So far that cooperation remains incomplete. Without it, downstream communities remain hostages to upstream decisions and upstream weather.',
+          'Hydropower is particularly exposed. Nepal’s energy future and export ambitions rest on rivers that are also the primary pathways for glacial floods. A single major outburst can destroy turbines, transmission lines and access roads, wiping out years of investment and setting back the national economy. Tourism corridors in the Everest and Langtang regions face the same existential risk.',
+        ],
+      },
+      {
+        heading: 'What Can Still Be Done',
+        content: [
+          'Engineering solutions exist and have been demonstrated. Controlled outlet works at Imja Tsho in 2016 lowered the lake by draining more than four million cubic metres of water. Similar interventions have been carried out or planned at Tsho Rolpa and other priority sites. A recent Green Climate Fund grant of US$36 million is intended to support drainage and risk-reduction measures at four high-risk lakes.',
+          'Early-warning systems that combine satellite monitoring, seismic sensors and community networks can buy precious minutes or hours. Yet these measures remain piecemeal. The list of lakes requiring urgent attention is longer than the list of lakes that have received it. Monitoring of smaller, rapidly forming lakes is still inadequate. Land-use planning in high-risk valleys continues to lag. And the fundamental driver — global greenhouse-gas emissions — lies beyond Nepal’s control. The country contributes negligibly to the problem yet suffers disproportionately from its consequences.',
+        ],
+      },
+      {
+        heading: 'A Slow-Motion Emergency Requires Fast Political Will',
+        content: [
+          'The August disaster will eventually fade from international headlines. The bodies will be recovered or declared missing, the highways will be patched, and the hydropower plants will be repaired or written off. What must not fade is the recognition that this was not a black-swan event. It was the predictable outcome of a process that scientists have documented for decades: a warming atmosphere thinning glaciers, expanding lakes, weakening slopes, and concentrating people and infrastructure in the path of the resulting floods.',
+          'Nepal faces a slow-motion emergency. Around 200 lakes across the wider region, and 47 prioritised for its own river systems, remain potential sources of sudden, high-volume floods. Climate change is increasing both the number of lakes and the probability that they will fail. Geography concentrates the hazard. Transboundary realities complicate the response. The only missing ingredient is sustained political will — domestic and international — to treat the threat with the seriousness it deserves.',
+          'Lives already lost cannot be recovered. Lives still at risk can still be protected, but only if the warning is finally heeded.',
+        ],
+      },
+    ],
+  },
+]
+
 export const NAV = [
   { to: '/', label: 'Home' },
   { to: '/programs', label: 'Programs' },
   { to: '/impact', label: 'Impact' },
   { to: '/preparedness', label: 'Preparedness' },
+  { to: '/blog', label: 'Blog' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]

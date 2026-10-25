@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, ShieldCheck, HeartPulse, Home as HomeIcon, ChevronRight, Landmark, Waves, Activity, Wind } from 'lucide-react'
+import { ArrowRight, ShieldCheck, HeartPulse, Home as HomeIcon, ChevronRight, Landmark, Waves, Activity, Wind, Sparkles, Clock } from 'lucide-react'
 import { Container, Section, SectionHeading, Button, Card, Badge, Reveal, stagger, staggerItem } from '../components/ui.jsx'
 import { programIcon } from '../components/icons.js'
-import { ORG, GOALS, PROGRAMS, APPROACH, INDIA_RISK } from '../data/site.js'
+import { ORG, GOALS, PROGRAMS, APPROACH, INDIA_RISK, BLOG_POSTS } from '../data/site.js'
 
 const goalIcons = { lives: HeartPulse, property: HomeIcon }
 const riskIcons = { Landmark, Waves, Activity, Wind }
@@ -217,6 +217,87 @@ function Approach() {
   )
 }
 
+
+function BlogTeaser() {
+  const featured = BLOG_POSTS[0]
+  if (!featured) return null
+
+  return (
+    <Section className="border-t border-white/5 bg-ink-900/40">
+      <Container>
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Latest Insights"
+              title="Field dispatches & resilience analysis."
+              lead="Evidence-based reports and perspectives from ground zero of climate hazard zones."
+            />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <Link
+              to="/blog"
+              className="ring-focus group inline-flex items-center gap-1 rounded-lg text-sm font-semibold text-brand-300 hover:text-brand-200"
+            >
+              Visit blog
+              <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </Reveal>
+        </div>
+
+        <div className="mt-10">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-3xl border border-brand-400/20 bg-gradient-to-br from-ink-900/90 via-ink-850 to-ink-950 p-6 sm:p-8 lg:p-10 transition-all hover:border-brand-400/40">
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-500/10 blur-3xl pointer-events-none" />
+              <div className="relative">
+                <div className="flex flex-wrap items-center gap-3">
+                  <Badge tone="signal">
+                    <Sparkles className="h-3 w-3" />
+                    Special Report
+                  </Badge>
+                  <span className="text-xs text-slate-400">{featured.category}</span>
+                  <div className="flex items-center gap-1 text-xs text-slate-400 ml-auto">
+                    <Clock className="h-3 w-3 text-brand-400" />
+                    <span>{featured.readTime}</span>
+                  </div>
+                </div>
+
+                <Link to={"/blog/" + featured.slug} className="group block mt-4">
+                  <h3 className="text-xl font-bold text-white transition-colors group-hover:text-brand-300 sm:text-2xl">
+                    {featured.title}
+                  </h3>
+                </Link>
+
+                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-300 sm:text-base">
+                  {featured.subtitle}
+                </p>
+
+                <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/5 pt-4">
+                  <div className="flex items-center gap-2.5 text-xs text-slate-300">
+                    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-500/20 text-brand-300 font-semibold">
+                      {featured.author.avatar}
+                    </div>
+                    <div>
+                      <span className="font-medium text-white">{featured.author.name}</span>
+                      <span className="text-slate-400 ml-1.5">· {featured.author.affiliation}</span>
+                    </div>
+                  </div>
+
+                  <Link
+                    to={"/blog/" + featured.slug}
+                    className="ring-focus inline-flex items-center gap-1.5 text-xs font-semibold text-brand-300 hover:text-brand-200"
+                  >
+                    Read article <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </Container>
+    </Section>
+  )
+}
+
 function CTA() {
   return (
     <Section>
@@ -256,6 +337,7 @@ export default function Home() {
       <Challenge />
       <ProgramsPreview />
       <Approach />
+      <BlogTeaser />
       <CTA />
     </>
   )
