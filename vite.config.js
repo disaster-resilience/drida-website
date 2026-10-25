@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   // GitHub Pages project site is served under /<repo>/.
   // Project site → '/drida-website/'  |  user site (<user>.github.io repo) → '/'
-  base: '/drida-website/',
+  base: '/',
   plugins: [react(), tailwindcss()],
   server: { port: 5173, host: true },
 })
