@@ -286,7 +286,6 @@ export const PRINCIPLES = [
 export const NAV = [
   { to: '/', label: 'Home' },
   { to: '/programs', label: 'Programs' },
-  { to: '/partners', label: 'Partners' },
   { to: '/impact', label: 'Impact' },
   { to: '/preparedness', label: 'Preparedness' },
   { to: '/about', label: 'About' },
