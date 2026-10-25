@@ -296,7 +296,7 @@ export const BLOG_POSTS = [
     author: {
       name: 'Dr. Antony Gnanamuthu',
       role: 'Humanitarian professional & disaster management specialist',
-      affiliation: 'Secretary General, International Association of Disaster Management (IADM)',
+      affiliation: 'Humanitarian & Disaster Risk Management Specialist',
       avatar: 'AG',
     },
     publishedAt: '2026-08-31',

@@ -169,7 +169,7 @@ export default function BlogPost() {
 
               <div className="mt-6 border-t border-white/10 pt-4">
                 <div className="text-[11px] text-slate-400 leading-relaxed">
-                  Published in cooperation with the International Association of Disaster Management (IADM).
+                  Published as part of DRIDA’s high-altitude hazard research & knowledge series.
                 </div>
               </div>
             </aside>
@@ -201,12 +201,12 @@ export default function BlogPost() {
                     <span className="text-xs font-semibold uppercase tracking-wider text-brand-400">About the Author</span>
                     <h3 className="text-lg font-bold text-white mt-1">{post.author.name}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                      The author is a humanitarian professional and a disaster management specialist who has led community engagement for risk reduction across Asia, Africa and Europe. He is currently Secretary General of the International Association of Disaster Management.
+                      The author is a humanitarian professional and a disaster management specialist who has led community engagement for risk reduction across Asia, Africa and Europe.
                     </p>
                     <div className="mt-4 flex flex-wrap gap-2">
                       <span className="inline-flex items-center gap-1 rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-slate-300">
                         <Shield className="h-3 w-3 text-brand-400" />
-                        IADM Secretary General
+                        Disaster Risk Management
                       </span>
                       <span className="inline-flex items-center gap-1 rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-slate-300">
                         <Waves className="h-3 w-3 text-sky-400" />
