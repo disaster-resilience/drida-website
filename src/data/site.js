@@ -7,7 +7,7 @@ export const ORG = {
   tagline: 'Engineering resilience before disaster strikes.',
   mission:
     'DRIDA builds the physical and digital infrastructure that lets communities survive hazards and recover fast — so fewer lives are lost and less property is destroyed.',
-  email: 'dridasocial@gmail.com',
+  email: 'info@drida.net',
   address: 'India Regional Technology Hub · Tamil Nadu, India',
   // Contact form → StaticForms.dev (server-side email; no backend needed).
   // The notification recipient is fixed in the StaticForms dashboard per apiKey
