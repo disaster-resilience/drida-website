@@ -1,12 +1,10 @@
 {
   "0": "CLAUDE.md",
-  "1": "ui.jsx",
+  "1": "Card",
   "2": "package.json",
-  "3": "site.js",
-  "4": "ui.jsx",
-  "5": "Home.jsx",
+  "3": "App.jsx",
+  "4": "Home.jsx",
+  "5": "Container",
   "6": "DRIDA — Disaster Resilience Infrastructure Development Agency",
-  "7": "Partners.jsx",
-  "8": "vite.config.js",
-  "9": "Partners.jsx"
+  "9": "site.js"
 }

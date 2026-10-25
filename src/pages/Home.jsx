@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, ShieldCheck, HeartPulse, Home as HomeIcon, ChevronRight, Network, Landmark, Waves, Activity, Wind } from 'lucide-react'
+import { ArrowRight, ShieldCheck, HeartPulse, Home as HomeIcon, Landmark, Waves, Activity, Wind } from 'lucide-react'
 import { Container, Section, SectionHeading, Button, Card, Badge, Reveal, stagger, staggerItem } from '../components/ui.jsx'
 import { programIcon } from '../components/icons.js'
-import { ORG, GOALS, PROGRAMS, APPROACH, HUB, PARTNERS, INDIA_RISK } from '../data/site.js'
+import { ORG, GOALS, PROGRAMS, APPROACH, INDIA_RISK } from '../data/site.js'
 
 const goalIcons = { lives: HeartPulse, property: HomeIcon }
 const riskIcons = { Landmark, Waves, Activity, Wind }
@@ -45,11 +45,11 @@ function Hero() {
           </motion.p>
 
           <motion.div variants={staggerItem} className="mt-9 flex flex-wrap gap-3">
-            <Button to="/partners">
-              Meet the Hub partners <ArrowRight className="h-4 w-4" />
+            <Button to="/programs">
+              Explore our programs <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button to="/programs" variant="ghost">
-              Explore our programs
+            <Button to="/about" variant="ghost">
+              About DRIDA
             </Button>
           </motion.div>
         </motion.div>
@@ -86,49 +86,6 @@ function Mission() {
               )
             })}
           </div>
-        </div>
-      </Container>
-    </Section>
-  )
-}
-
-function HubPreview() {
-  return (
-    <Section className="border-t border-white/5 bg-ink-900/40">
-      <Container>
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <Reveal>
-            <SectionHeading
-              eyebrow="The Hub"
-              title="One connecting link, five stakeholders."
-              lead={`${HUB.lead} leads the ${HUB.name}, joining land, academia, international expertise, and state & national authorities into a single effort towards a ${HUB.vision}.`}
-            />
-          </Reveal>
-          <Reveal delay={0.1}>
-            <Link
-              to="/partners"
-              className="ring-focus group inline-flex items-center gap-1 rounded-lg text-sm font-semibold text-brand-300 hover:text-brand-200"
-            >
-              Meet the partners
-              <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </Reveal>
-        </div>
-
-        <div className="mt-10 flex flex-col items-center gap-3 rounded-2xl border border-brand-400/20 bg-ink-900/50 p-6 sm:flex-row sm:flex-wrap sm:justify-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-500/15 px-4 py-2 text-sm font-bold text-brand-200 ring-1 ring-brand-400/30">
-            <Network className="h-4 w-4" />
-            {HUB.lead}
-          </span>
-          {PARTNERS.map((p) => (
-            <Link
-              key={p.id}
-              to="/partners"
-              className="ring-focus rounded-full border border-white/10 bg-ink-850 px-4 py-2 text-sm text-slate-300 transition-colors hover:border-brand-400/30 hover:text-white"
-            >
-              {p.name}
-            </Link>
-          ))}
         </div>
       </Container>
     </Section>
@@ -296,7 +253,6 @@ export default function Home() {
     <>
       <Hero />
       <Mission />
-      <HubPreview />
       <Challenge />
       <ProgramsPreview />
       <Approach />
